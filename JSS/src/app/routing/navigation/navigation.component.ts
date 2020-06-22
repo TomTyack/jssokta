@@ -25,6 +25,6 @@ export class NavigationComponent {
   }
 
   logout() {
-    this.oktaAuth.logout('/');
+    this.oktaAuth.logout('/logout');
   }
 }
