@@ -1,0 +1,12 @@
+Profile Component 
+<p>IsAuthenticated {{isAuthenticated}}</p>
+
+<div *ngIf="user && user.email">
+  <label>Customer email </label>
+  <p>{{user.email}}</p>
+</div>
+
+<div *ngIf="user && user.name">
+  <label>Customer Name </label>
+  <p>{{user.name}}</p>
+</div>

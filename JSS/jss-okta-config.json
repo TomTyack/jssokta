@@ -1,0 +1,17 @@
+{
+  "mock": {
+    "islocal": false,
+    "mockApiEndpoint": "https://raa-claimslodgement-nodejs-mock-apis.azurewebsites.net"
+  },
+  "okta": {
+    "issuer": "https://dev-952251.okta.com/oauth2/default",
+    "redirectUri": "https://jssokta/implicitcallback",
+    "clientId": "0oafzoycnHmt4Fjbd4x6",
+    "pkce": true,
+    "scopes": ["openid", "profile", "email"]
+  },
+  "debug": {
+    "showApiErrors": true,
+    "showDebugJson": true
+  }
+}
