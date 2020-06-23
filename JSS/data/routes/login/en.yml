@@ -28,5 +28,6 @@ placeholders:
       # is required at all in the value, making it easy to read
       content: |
           <p>See the login to OKTA integration below.</p>
+  - componentName: OktaSignIn
 
 
