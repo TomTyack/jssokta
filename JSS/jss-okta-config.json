@@ -1,7 +1,7 @@
 {
   "mock": {
     "islocal": false,
-    "mockApiEndpoint": "https://raa-claimslodgement-nodejs-mock-apis.azurewebsites.net"
+    "mockApiEndpoint": "https://okta-apis.azurewebsites.net"
   },
   "okta": {
     "issuer": "https://dev-952251.okta.com/oauth2/default",
