@@ -1,6 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { ComponentRendering } from '@sitecore-jss/sitecore-jss-angular';
-import OktaSignIn from '@okta/okta-signin-widget';
 import { environment } from './../../../environments/environment';
 import { OktaAuthService } from '@okta/okta-angular';
 import { Router, NavigationStart } from '@angular/router';
@@ -20,6 +19,15 @@ export class OktaSignInComponent implements OnInit {
       return;
       // it's safe to use window now
     }
+    this.signIn = oktaAuth;
+    import('@okta/okta-signin-widget')
+    .then((OktaSignIn) => {
+      this.bootupSignin(OktaSignIn, router);
+    });
+
+  }
+
+  private bootupSignin(OktaSignIn: any, router) {
     this.widget = new OktaSignIn({
       baseUrl: environment.okta.baseDomain,
       authParams: {
@@ -27,7 +35,6 @@ export class OktaSignInComponent implements OnInit {
       }
     });
 
-    this.signIn = oktaAuth;
 
     // Show the widget when prompted, otherwise remove it from the DOM.
     router.events.forEach(event => {
