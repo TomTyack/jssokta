@@ -4,10 +4,10 @@
     "mockApiEndpoint": "https://okta-apis.azurewebsites.net"
   },
   "okta": {
-    "baseDomain": "https://dev-952251.okta.com",
-    "issuer": "https://dev-952251.okta.com/oauth2/default",
+    "baseDomain": "https://dev-INSERT-OKTA-ID.okta.com",
+    "issuer": "https://dev-INSERT-OKTA-ID.okta.com/oauth2/default",
     "redirectUri": "https://jssokta/implicitcallback",
-    "clientId": "0oafzoycnHmt4Fjbd4x6",
+    "clientId": "${YOUR_APPLICATION_CLIENT_ID}",
     "pkce": true,
     "scopes": ["openid", "profile", "email"],
     "portalRoute": "/profile",
