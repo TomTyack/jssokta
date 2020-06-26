@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { OktaAuthService } from '@okta/okta-angular';
+import { environment } from './../../../environments/environment';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-navigation',
@@ -8,10 +10,12 @@ import { OktaAuthService } from '@okta/okta-angular';
 export class NavigationComponent {
   isAuthenticated: boolean;
 
-  constructor(public oktaAuth: OktaAuthService) {
+  constructor(public oktaAuth: OktaAuthService,public router: Router) {
     // Subscribe to authentication state changes
     this.oktaAuth.$authenticationState.subscribe(
-      (isAuthenticated: boolean)  => this.isAuthenticated = isAuthenticated
+      (isAuthenticated: boolean)  => {
+        this.isAuthenticated = isAuthenticated;
+      }
     );
   }
 
@@ -21,10 +25,14 @@ export class NavigationComponent {
   }
 
   login() {
-    this.oktaAuth.loginRedirect('/profile');
+    this.oktaAuth.loginRedirect(environment.okta.portalRoute);
+  }
+
+  loginEmbedded() {
+    this.router.navigate([environment.okta.loginRoute]);
   }
 
   logout() {
-    this.oktaAuth.logout('/logout');
+    this.oktaAuth.logout(environment.okta.logoutRoute);
   }
 }

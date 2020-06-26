@@ -11,7 +11,8 @@
     "pkce": true,
     "scopes": ["openid", "profile", "email"],
     "portalRoute": "/profile",
-    "loginRoute": "/login"
+    "loginRoute": "/login",
+    "logoutRoute": "/logout"
   },
   "debug": {
     "showApiErrors": false,

@@ -16,8 +16,13 @@
     </a>
     
     <a *ngIf="!isAuthenticated" (click)="login()" class="p-2 text-dark">
-      {{ 'Login' | translate }}
+      {{ 'Login via OKTA' | translate }}
     </a>
+
+    <a *ngIf="!isAuthenticated" (click)="loginEmbedded()" class="p-2 text-dark">
+      {{ 'Login Embedded' | translate }}
+    </a>
+
     <a *ngIf="isAuthenticated" (click)="logout()" class="p-2 text-dark">
       {{ 'Logout' | translate }}
     </a>
